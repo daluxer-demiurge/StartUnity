@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class EnemySpawn : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField]
+    private GameObject _enemy;
+    
+    [SerializeField]
+    private Transform _enemySpawnPoint;    
+    
     void Start()
     {
-        
-    }
+        Instantiate(_enemy, _enemySpawnPoint.position, Quaternion.identity);
+    }  
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class SafeRing : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private int _damage;
+    private bool _occupiedPoint = false;   
+     
+    private void OnTriggerEnter(Collider other)
     {
-        
-    }
+        if (other.gameObject.CompareTag("Player"))
+        {
+            _occupiedPoint = true;
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (_occupiedPoint == true && other.gameObject.CompareTag("Enemy"))
+        {
+            var enemy = other.GetComponent<Enemy>();
+            enemy.Hurt(_damage);
+            Destroy(gameObject);
+        }
     }
 }
