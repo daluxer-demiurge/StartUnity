@@ -7,9 +7,9 @@ using UnityEngine.AI;
 public class Enemy : MonoBehaviour
 {
     [SerializeField]
-    private int _health;
+    private float _health;
     NavMeshAgent navMeshAgent;
-    Player player;
+    PlayerSpawn player;
     Animator animator;
     bool dead;
 
@@ -17,11 +17,10 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
-        player = FindObjectOfType<Player>();
+        player = FindObjectOfType<PlayerSpawn>();
         animator = GetComponentInChildren<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         navMeshAgent.SetDestination(player.transform.position);
