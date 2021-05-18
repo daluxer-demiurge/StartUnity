@@ -13,6 +13,7 @@ public class Weapon : MonoBehaviour
 	[SerializeField] private float _weaponDamage = 50.0f;
 	public float fireRate = 1.0f;
 	public ParticleSystem flash;
+	public ParticleSystem smoke;
 	public Transform bulletSpawn;
 	public AudioClip shotSFX;
 	public AudioSource audioSourse;
@@ -25,8 +26,8 @@ public class Weapon : MonoBehaviour
     void Shooting()
 	{
 		audioSourse.PlayOneShot(shotSFX);
-		//Instantiate(flash, bulletSpawn.position, bulletSpawn.rotation);  плохо не использовать, много возни
 		flash.Play(); //Лучше так)))
+		smoke.Play();
 		RaycastHit hit;
 		if (Physics.Raycast(Camera.transform.position, Camera.transform.forward, out hit, _weaponRange))
 		{

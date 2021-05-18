@@ -14,7 +14,7 @@ public class SafeRing : MonoBehaviour
             _occupiedPoint = true;
         }
 
-        if (_occupiedPoint == true && other.gameObject.CompareTag("Enemy"))
+        if (_occupiedPoint = true & other.gameObject.CompareTag("Enemy"))
         {
             var enemy = other.GetComponent<Enemy>();
             enemy.Hurt(_damage);

@@ -23,14 +23,12 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        navMeshAgent.SetDestination(player.transform.position);
-        if (dead)
-            return;
+        navMeshAgent.SetDestination(player.transform.position);        
     }
 
-    public void Hurt(int damage)
+    public void Hurt(float _damage)
     {     
-        _health -= damage; ;
+        _health -= _damage; ;
 
         if (_health <= 0)
         {
@@ -48,4 +46,6 @@ public class Enemy : MonoBehaviour
         }
     }
 
-}
+   
+
+    }
