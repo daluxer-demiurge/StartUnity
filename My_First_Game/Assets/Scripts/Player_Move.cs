@@ -35,7 +35,7 @@ public class Player_Move : MonoBehaviour
         moveDirection.y -= 1;
         if (Input.GetKey(KeyCode.LeftShift)) _currentSpeed = _shiftSpeed;
         else _currentSpeed = _mainSpeed;
-        player.Move(moveDirection * _currentSpeed * Time.deltaTime);
+        player.Move(moveDirection * _currentSpeed);
     }
     #endregion
 }

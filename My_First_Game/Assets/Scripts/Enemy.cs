@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private float _health;
     NavMeshAgent navMeshAgent;
-    PlayerSpawn player;
+    Player player;
     Animator animator;
     bool dead;
 
@@ -17,7 +17,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
-        player = FindObjectOfType<PlayerSpawn>();
+        player = FindObjectOfType<Player>();
         animator = GetComponentInChildren<Animator>();
     }
 
