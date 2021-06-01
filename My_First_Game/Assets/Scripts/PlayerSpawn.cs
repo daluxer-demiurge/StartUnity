@@ -6,9 +6,8 @@ public class PlayerSpawn : MonoBehaviour
 {
     [SerializeField]
     private GameObject _player;
-
-    [SerializeField]
-    private Transform _playerSpawnPoint;
+   
+    public Transform _playerSpawnPoint;
 
     void Start()
     {
